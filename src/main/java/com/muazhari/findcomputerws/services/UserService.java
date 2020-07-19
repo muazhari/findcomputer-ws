@@ -6,6 +6,8 @@ import com.muazhari.findcomputerws.dao.UserItemLinkDao;
 import com.muazhari.findcomputerws.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,8 +54,14 @@ public class UserService {
         return userDao.updateByUsername(username, userToUpdate);
     }
 
-    public Integer updateByUsernameAndPassword(String username, User userToUpdate) {
-        return userDao.updateByUsernameAndPassword(username, userToUpdate);
+    public ResponseEntity<Integer> updateByUsernameAndPassword(String username, User userToUpdate) {
+        Integer result = userDao.updateByUsernameAndPassword(username, userToUpdate);
+        HttpStatus status = HttpStatus.OK;
+
+        if (result == 0)
+            status = HttpStatus.UNAUTHORIZED;
+
+        return new ResponseEntity<Integer>(result, status);
     }
 
     public User getByUsername(String username) {
