@@ -1,0 +1,15 @@
+
+#logging.level.org.springframework: debug
+spring:
+  devtools:
+    restart:
+      additional-paths: /src
+
+server:
+  port: 3000
+app:
+  datasource:
+    jdbc-url: jdbc:postgresql://database-2.cabpwns7uxgm.ap-southeast-1.rds.amazonaws.com:5432/findcomputer
+    username: root
+    password: password
+    pool-size: 30
