@@ -51,12 +51,12 @@ public class AuthService {
     public ResponseEntity<User> register(RegisterContract registerContract) {
         User findUser = null;
         HttpStatus status = null;
-        status = HttpStatus.OK;
 
         try {
             findUser = userDao.getByUsernameAndPassword(
                     registerContract.getUsername(),
                     registerContract.getPassword());
+            status = HttpStatus.OK;
         } catch (EmptyResultDataAccessException e) {
             findUser = new User(UUID.randomUUID(), registerContract.getUsername(), registerContract.getEmail(), registerContract.getPassword());
             userDao.create(findUser);

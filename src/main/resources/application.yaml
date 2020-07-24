@@ -1,9 +1,13 @@
-
-#logging.level.org.springframework: debug
+logging.level.org.springframework: debug
 spring:
   devtools:
     restart:
       additional-paths: /src
+  security:
+    user:
+      name: root
+      password: root
+
 
 server:
   port: 3000
@@ -12,4 +16,7 @@ app:
     jdbc-url: jdbc:postgresql://database-2.cabpwns7uxgm.ap-southeast-1.rds.amazonaws.com:5432/findcomputer
     username: root
     password: password
+    #    jdbc-url: jdbc:postgresql://database-2.cabpwns7uxgm.ap-southeast-1.rds.amazonaws.com:5432/findcomputer
+    #    username: cyutwrcxoykumg
+    #    password: d6d2df7f79e96486905f40e199f45792be6db3c31184b22bacf7fe3b0f3f5e0d
     pool-size: 30
