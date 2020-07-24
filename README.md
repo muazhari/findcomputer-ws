@@ -1,6 +1,6 @@
-# findcomputer-app
+# findcomputer-ws
 
-> Find Computer App for Compfest Task Project
+> Find Computer Web Service for Compfest Task Project
 
 # Installation
 
