@@ -10,7 +10,7 @@ https://www.jetbrains.com/idea/download/
 
 # Usage
 
-Running project instruction
+Running project instructions
 1. Open pom.xml in IntelliJ IDEA
 2. Run (Shift + F10)
 
